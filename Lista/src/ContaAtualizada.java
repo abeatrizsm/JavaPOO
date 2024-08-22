@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Conta {
+public class ContaAtualizada {
     String cpf;
     String numeroBanco; 
     double saldo;
@@ -9,39 +9,27 @@ public class Conta {
     double bonus;  
     double bonusAtualizado;  
     int opcao;
-    int opcao2;
+    String tipoConta;
     Scanner prompt = new Scanner(System.in);
 
-    public void infos(){
-        System.out.println("Insira o CPF:");
-        cpf = prompt.next();
-        System.out.println("Insira o numero representativo do banco:");
-        numeroBanco = prompt.next();
-        System.out.println("Insira o saldo:");
-        saldo = prompt.nextDouble();
-        
-    }
-
     public double bonificacao(){
-        System.out.println("Digite 1 para correntista especial e 2 para comum:");
-        opcao2 = prompt.nextInt();
 
-        if(opcao2==1){
+        if(tipoConta=="especial"){
             bonus = saldo * 0.1;
         }
-        else{
+        if(tipoConta=="comum"){
             bonus = saldo * 0.05;
         }
         return bonus;
     }
-    
+       
     public double saqueDeposito(){
-        System.out.println("Gostaria de realizar um saque ou um depósito em sua conta?");
-        System.out.println("Digite: 1 - Sacar | 2 - Depositar | 3 - encerrar ");
+        System.out.println("Gostaria de realizar uma transferencia?");
+        System.out.println("Digite: 1 - sim | 2 - não ");
         opcao = prompt.nextInt();
 
         if(opcao==1){
-            System.out.println("Quanto você deseja sacar?");
+            System.out.println("Quanto você deseja transferir?");
             saque = prompt.nextDouble();
             saldo = saldo - saque;
         }
@@ -58,7 +46,7 @@ public class Conta {
 
     public double bonificacaoAtualizada(){
 
-        if(opcao2==1){
+        if(tipoConta=="especial"){
             bonusAtualizado = saldo * 0.1;
         }
         else{
