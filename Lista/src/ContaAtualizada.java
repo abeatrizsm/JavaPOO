@@ -4,8 +4,7 @@ public class ContaAtualizada {
     String cpf;
     String numeroBanco; 
     double saldo;
-    double saque;
-    double deposito;
+    double transferencia;
     double bonus;  
     double bonusAtualizado;  
     int opcao;
@@ -23,25 +22,16 @@ public class ContaAtualizada {
         return bonus;
     }
        
-    public double saqueDeposito(){
-        System.out.println("Gostaria de realizar uma transferencia?");
-        System.out.println("Digite: 1 - sim | 2 - não ");
-        opcao = prompt.nextInt();
-
-        if(opcao==1){
-            System.out.println("Quanto você deseja transferir?");
-            saque = prompt.nextDouble();
-            saldo = saldo - saque;
+    public void transferencia(Conta contaDestino, double valorTranferencia){
+        if(saldo>valorTranferencia){
+            saldo = saldo - valorTranferencia;
+            contaDestino.saldo = contaDestino.saldo + valorTranferencia;
+            System.out.println("Transferência realizada");
         }
-        if(opcao==2){
-            System.out.println("Quanto você deseja depositar?");
-            deposito = prompt.nextDouble();
-            saldo = saldo + deposito;
+        else{
+            System.out.println("Saldo insuficiente para transferir.");
         }
-        if(opcao==3){
-            System.out.println("Obrigada pela preferência.");
-        }
-        return saldo;
+    
     }
 
     public double bonificacaoAtualizada(){
@@ -57,15 +47,14 @@ public class ContaAtualizada {
 
     public void mostrarAtributos(){
         bonus = bonificacao();
-        saldo = saqueDeposito();
+        // saldo = transferencia();
         bonusAtualizado = bonificacaoAtualizada();
 
         System.out.println("==========================================================");
         System.out.println("CPF do titular: " + cpf);
         System.out.println("Número representativo do banco: " + numeroBanco);
         System.out.printf("O seu saldo atual é: %.2f\n", saldo);
-        System.out.printf("Valor sacado: %.2f\n", saque);
-        System.out.printf("Valor depositado: %.2f\n", deposito);
+        System.out.printf("Valor transferido: %.2f\n", transferencia);
         System.out.printf("Valor da bonificacão antes das operações: %.2f\n", bonus);
         System.out.printf("Valor da bonificacão após das operações: %.2f\n", bonusAtualizado);
         System.out.println("==========================================================");

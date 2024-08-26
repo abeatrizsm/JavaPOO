@@ -12,7 +12,25 @@ public class Principal {
         conta2.saldo = 3409.98;
         conta2.tipoConta = "comum";
         
+        // System.out.println("Gostaria de realizar uma transferencia?");
+        // System.out.println("Digite: 1 - sim | 2 - não ");
+        // opcao = prompt.nextInt();
         
+        // while(opcao!=1 || opcao!=2){
+        //     System.out.println("Insira uma opção válida.");
+        //     System.out.println("Gostaria de realizar uma transferencia?");
+        //     System.out.println("Digite: 1 - sim | 2 - não ");
+        // }
+        // if(opcao==1){
+        //     System.out.println("Quanto você deseja transferir?");
+        //     transferencia = prompt.nextDouble();
+            
+            
+        // }
+
+
+
+
         // Conta consulta = new Conta();
         // consulta.infos();
         // consulta.mostrarAtributos();
