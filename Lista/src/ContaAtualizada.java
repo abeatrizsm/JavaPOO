@@ -4,7 +4,7 @@ public class ContaAtualizada {
     String cpf;
     String numeroBanco; 
     double saldo;
-    double transferencia;
+    double valorTranferencia;
     double bonus;  
     double bonusAtualizado;  
     int opcao;
@@ -22,7 +22,9 @@ public class ContaAtualizada {
         return bonus;
     }
        
-    public void transferencia(Conta contaDestino, double valorTranferencia){
+    public void transferencia(Conta contaDestino){
+        valorTranferencia = prompt.nextDouble();
+
         if(saldo>valorTranferencia){
             saldo = saldo - valorTranferencia;
             contaDestino.saldo = contaDestino.saldo + valorTranferencia;
@@ -54,7 +56,7 @@ public class ContaAtualizada {
         System.out.println("CPF do titular: " + cpf);
         System.out.println("Número representativo do banco: " + numeroBanco);
         System.out.printf("O seu saldo atual é: %.2f\n", saldo);
-        System.out.printf("Valor transferido: %.2f\n", transferencia);
+        //System.out.printf("Valor transferido: %.2f\n", valorTranferencia);
         System.out.printf("Valor da bonificacão antes das operações: %.2f\n", bonus);
         System.out.printf("Valor da bonificacão após das operações: %.2f\n", bonusAtualizado);
         System.out.println("==========================================================");

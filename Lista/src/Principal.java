@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Principal {
     public static void main(String[] args) {
         ContaAtualizada conta1 = new ContaAtualizada();
@@ -11,22 +13,16 @@ public class Principal {
         conta2.numeroBanco = "001";
         conta2.saldo = 3409.98;
         conta2.tipoConta = "comum";
+
+        ContaAtualizada contaPrincipal = null;
+        ContaAtualizada contaDestino = null;
+
+        Scanner prompt = new Scanner(System.in);
+
+
+
         
-        // System.out.println("Gostaria de realizar uma transferencia?");
-        // System.out.println("Digite: 1 - sim | 2 - não ");
-        // opcao = prompt.nextInt();
-        
-        // while(opcao!=1 || opcao!=2){
-        //     System.out.println("Insira uma opção válida.");
-        //     System.out.println("Gostaria de realizar uma transferencia?");
-        //     System.out.println("Digite: 1 - sim | 2 - não ");
-        // }
-        // if(opcao==1){
-        //     System.out.println("Quanto você deseja transferir?");
-        //     transferencia = prompt.nextDouble();
-            
-            
-        // }
+
 
 
 
